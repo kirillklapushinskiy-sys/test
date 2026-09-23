@@ -1,0 +1,11 @@
+{
+    Filter = {
+        Bundles = (
+            "com.apple.springboard",
+            "com.apple.mobilephone",
+            "ph.telegra.Telegraph",
+            "net.whatsapp.WhatsApp",
+            "com.apple.Preferences"
+        );
+    };
+}

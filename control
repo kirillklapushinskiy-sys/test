@@ -1,0 +1,9 @@
+Package: com.kirill.forcespeaker
+Name: ForceSpeaker
+Version: 0.1.0
+Architecture: iphoneos-arm64
+Description: Prefer the built-in loudspeaker for audio sessions while preserving headphones and Bluetooth routes.
+Maintainer: Kirill
+Author: Kirill
+Section: Tweaks
+Depends: firmware (>= 15.0)
