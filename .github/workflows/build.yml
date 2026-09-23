@@ -9,20 +9,23 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Setup Theos
-        uses: waruhachi/theos-action@main
+        uses: waruhachi/theos-action@v2.6.3
         with:
-          theos-src: theos/theos
-          theos-branch: master
-          sdks-src: theos/sdks
-          sdks-branch: master
+          theos-src: waruhachi/theos
+          theos-branch: main
+          sdks-src: waruhachi/sdks
+          sdks-branch: main
+
       - name: Build rootless package
         env:
           THEOS: ${{ github.workspace }}/theos
         run: |
           make clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+
       - name: Upload .deb
         uses: actions/upload-artifact@v4
         with:
