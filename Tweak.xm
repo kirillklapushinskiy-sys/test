@@ -22,9 +22,9 @@ static void FSForceSpeaker(AVAudioSession *session) {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (FSHasExternalRoute(session)) return;
         NSError *error = nil;
-        AVAudioSessionPortOverride result =
+        BOOL result =
             [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
-        if (result != AVAudioSessionPortOverrideSpeaker && error)
+        if (!result && error)
             NSLog(@"[ForceSpeaker] speaker override failed: %@", error);
     });
 }
